@@ -1,6 +1,7 @@
 import { useState } from "react";
 import DesktopNav from "./DesktopNav";
 import logo from '/logo.svg'
+import MobileNav from "./MobileNav";
 
 const Header = () => {
   const [hideLeft, setHideLeft] = useState("-left-[1000px]");
@@ -15,7 +16,7 @@ const Header = () => {
   return (
     <>
       <div className="max-[900px]:hidden"><DesktopNav menuItems={menuItems} Logo={logo}></DesktopNav></div>
-      <div className="min-[900px]:hidden">Mobile view</div>
+      <div className="min-[900px]:hidden"><MobileNav menuItems={menuItems} Logo={logo} onClose={onClose} hideLeft={hideLeft} onOpen={onOpen}></MobileNav></div>
     </>
   );
 };
