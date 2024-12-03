@@ -1,12 +1,13 @@
 
 import { Outlet } from 'react-router-dom'
 import './App.css'
+import Header from './components/Header/Header'
 
 function App() {
 
   return (
     <div className='max-w-screen-2xl mx-auto'>
-      <nav>navbar</nav>
+      <Header></Header>
       <Outlet></Outlet>
     </div>
   )
