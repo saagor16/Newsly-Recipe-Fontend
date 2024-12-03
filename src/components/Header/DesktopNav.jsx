@@ -1,9 +1,10 @@
 import React from 'react';
 
-const DesktopNav = () => {
+const DesktopNav = ({menuItems,Logo}) => {
     return (
-        <div>
-            DesktopNav
+        <div className='h-16 flex justify-between items-center px-6 lg:px-12'>
+            <a href='/'>
+            <img src={Logo} alt="logo" /></a>
         </div>
     );
 };
