@@ -10,10 +10,20 @@ const DesktopNav = ({menuItems,Logo}) => {
                 {
                     menuItems?.map((menu,index)=>(
                         <li key={index}>
-                            <Link to='/' className='font-medium capitalize text-secondary'>{menu}</Link>
+                            <Link to={menu} className='font-medium capitalize text-secondary'>{menu}</Link>
                         </li>
                     ))
                 }
+            </ul>
+
+            {/*login and signup btn*/}
+            <ul className='flex items-center gap-4 font-medium'>
+                <li>
+                    <button className='text-secondary px-4 py-3 rounded'>Log In</button>
+                </li>
+                <li>
+                    <button className='text-secondary px-4 py-3 rounded'>Sign Up</button>
+                </li>
             </ul>
         </div>
     );
