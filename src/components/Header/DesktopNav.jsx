@@ -15,7 +15,6 @@ const DesktopNav = ({menuItems,Logo}) => {
                     ))
                 }
             </ul>
-
             {/*login and signup btn*/}
             <ul className='flex items-center gap-4 font-medium'>
                 <li>
