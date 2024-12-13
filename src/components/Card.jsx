@@ -77,6 +77,10 @@ const Card = ({ item }) => {
               </div>
             </div>
           </div>
+
+          <div className="absolute top-2 right-2 py-2 px-4 bg-white rounded-lg">
+            <span className="font-medium">{item?.more?.[0]?.difficulty}</span>
+          </div>
         </div>
       </div>
     </div>
