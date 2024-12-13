@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { IoSearchOutline } from "react-icons/io5";
 import { useParams } from "react-router-dom";
+import Card from "../components/Card";
 
 const Search = () => {
     const searchText = useParams();
@@ -36,7 +37,6 @@ const Search = () => {
         }
     },[query])
 
-
   return (
     <div className="px-6 lg:px-12 py-20">
       <h1 className="text-center text-3xl py-10 font-semibold text-secondary sm:text-6xl sm:leading-relaxed">
@@ -54,10 +54,17 @@ const Search = () => {
         />
       </div>
 
-      <ul>
+      {
+        loading && <div>Loading.....</div>
+      }
+      {
+        error && <div>error happens.....</div>
+      }
+
+      <ul  className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
         {
-          results && results.map((item)=>(
-            <li key={item._id}>{item.name}</li>
+          results && results?.map((item)=>(
+            <Card item={item} key={item._id}></Card>
           ))
         }
       </ul>
