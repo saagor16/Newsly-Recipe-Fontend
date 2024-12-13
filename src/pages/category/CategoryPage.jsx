@@ -24,6 +24,7 @@ const CategoryPage = () => {
     fetchCategoryData()
   },[category])
 
+
   return (
     <div className="px-6 lg:px-12 py-20">
       <h1 className="text-center text-3xl py-10 font-semibold sm:text-6xl sm:leading-relaxed capitalize">{category}</h1>
@@ -32,9 +33,9 @@ const CategoryPage = () => {
 
       <ul>
         {
-          items && items?.map(item=>{
+          items && items?.map(item=>(
             <li key={item._id}>{item.name}</li>
-          })
+          ))
         }
       </ul>
 
