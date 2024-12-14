@@ -13,7 +13,7 @@ const Home = () => {
         <CategoryWrapper></CategoryWrapper>
       </div>
 
-      {/**other COmponent */}
+      {/**other Component */}
 
       <FeaturedSection></FeaturedSection>
       <LatestRecipe></LatestRecipe>
