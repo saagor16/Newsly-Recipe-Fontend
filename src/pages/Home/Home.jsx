@@ -5,6 +5,7 @@ import CompanyLogo from "./CompanyLogo";
 import FeaturedSection from "./FeaturedSection";
 import LatestRecipe from "./LatestRecipe";
 import NewsLetter from "./NewsLetter";
+import Subscription from "./Subscription";
 
 const Home = () => {
   return (
@@ -21,6 +22,7 @@ const Home = () => {
       <NewsLetter></NewsLetter>
       <AboutSection></AboutSection>
       <CompanyLogo></CompanyLogo>
+      <Subscription></Subscription>
     </div>
   );
 };
