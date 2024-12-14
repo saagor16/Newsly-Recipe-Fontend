@@ -1,6 +1,7 @@
 import Hero from "../../components/Hero";
 import CategoryWrapper from "../category/CategoryWrapper";
 import AboutSection from "./AboutSection";
+import CompanyLogo from "./CompanyLogo";
 import FeaturedSection from "./FeaturedSection";
 import LatestRecipe from "./LatestRecipe";
 import NewsLetter from "./NewsLetter";
@@ -19,6 +20,7 @@ const Home = () => {
       <LatestRecipe></LatestRecipe>
       <NewsLetter></NewsLetter>
       <AboutSection></AboutSection>
+      <CompanyLogo></CompanyLogo>
     </div>
   );
 };
