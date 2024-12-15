@@ -5,37 +5,36 @@ import { useParams } from "react-router-dom";
 import Card from "../components/Card";
 
 const Search = () => {
-    const searchText = useParams();
-    const [query,setQuery]=useState('');
-    const [results,setResults]=useState([]);
-    const [loading,setLoading]=useState(false);
-    const[error,setError]=useState(null);
+  const searchText = useParams();
+  const [query, setQuery] = useState("");
+  const [results, setResults] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-    useEffect(()=>{
-        const params = new URLSearchParams(window.location.search);
-        const queryParam = params.get('query');
-        if (queryParam) {
-            setQuery(queryParam)
-        }
-    },[])
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const queryParam = params.get("query");
+    if (queryParam) {
+      setQuery(queryParam);
+    }
+  }, []);
 
-    
-    useEffect(()=>{
-        const fetchItems = async ()=>{
-            setLoading(true);
-            try {
-              const response = await axios.get(`http://localhost:5000/api/items`,{
-                params :{q:query}
-              });
-              setResults(response.data)
-            }catch(err){
-              setError(err.message || 'Error Fetching data')
-            } finally{
-              setLoading(false)
-            }
-           fetchItems(); 
-        }
-    },[query])
+  useEffect(() => {
+    const fetchItems = async () => {
+      setLoading(true);
+      try {
+        const response = await axios.get(`http://localhost:5000/api/items`, {
+          params: { q: query },
+        });
+        setResults(response.data);
+      } catch (err) {
+        setError(err.message || "Error Fetching data");
+      } finally {
+        setLoading(false);
+      }
+      fetchItems();
+    };
+  }, [query]);
 
   return (
     <div className="px-6 lg:px-12 py-20">
@@ -54,19 +53,12 @@ const Search = () => {
         />
       </div>
 
-      {
-        loading && <div>Loading.....</div>
-      }
-      {
-        error && <div>error happens.....</div>
-      }
+      {loading && <div>Loading.....</div>}
+      {error && <div>error happens.....</div>}
 
-      <ul  className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-        {
-          results && results?.map((item)=>(
-            <Card item={item} key={item._id}></Card>
-          ))
-        }
+      <ul className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        {results &&
+          results?.map((item) => <Card item={item} key={item._id}></Card>)}
       </ul>
     </div>
   );
