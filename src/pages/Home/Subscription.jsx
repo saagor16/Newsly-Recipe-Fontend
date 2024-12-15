@@ -36,6 +36,9 @@ const Subscription = () => {
           </div>
         </div>
       </div>
+
+
+      <hr />
     </div>
   );
 };
