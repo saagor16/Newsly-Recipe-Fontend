@@ -1,18 +1,18 @@
-
-import { Outlet } from 'react-router-dom'
-import './App.css'
-import Header from './components/Header/Header'
-import Footer from './components/Footer'
+import { Outlet } from "react-router-dom";
+import "./App.css";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer";
 
 function App() {
-
   return (
-    <div className='max-w-screen-2xl mx-auto'>
+    <div className="max-w-screen-2xl mx-auto">
       <Header></Header>
-      <Outlet></Outlet>
+      <div className="min-h-[calc(100vh-136px)]">
+        <Outlet></Outlet>
+      </div>
       <Footer></Footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
