@@ -38,7 +38,6 @@ const Card = ({ item }) => {
     return categoryStyles[category] || categoryStyles.default;
   }
   const categoryStyle =getCategoryStyle(item?.category);
-  console.log(item?.more);
   
 
   return (
