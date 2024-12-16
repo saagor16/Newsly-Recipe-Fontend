@@ -11,6 +11,7 @@ import SingleProduct from "./pages/products/SingleProduct.jsx";
 import Recipes from "./pages/products/Recipes.jsx";
 import Resources from "./pages/resources/Resources.jsx";
 import About from "./pages/about/About.jsx";
+import Contact from "./pages/contact/Contact.jsx";
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
       {
         path:'/about',
         element:<About></About>
+      },
+      {
+        path:'/contact',
+        element:<Contact></Contact>
       },
     ]
   },
