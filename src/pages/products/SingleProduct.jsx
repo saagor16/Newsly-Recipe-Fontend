@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useLoaderData } from "react-router-dom";
 
 const SingleProduct = () => {
   const item = useLoaderData();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const extractNumber = (timeString) => {
     let timeArray = timeString.split(" ");
@@ -59,21 +63,30 @@ const SingleProduct = () => {
               </ul>
             </article>
 
-            
-          <div className="mt-5 ">
-            <h3 className="text-xl font-semibold ml-2">Preparation Time</h3>
-            <ul className="list-disc marker:text-blue-500 mt-4 ml-6 text-secondary marker:align-middle">
-                {
-                    item?.ingredients.map((ingredient,index)=>(
-                        <li key={index} className="pl-4 mt-2">
-                            <span>{ingredient?.name} : <span>{ingredient?.quantity}</span></span>
-                        </li>
-                    ))
-                }
-            </ul>
-          </div>
-
-
+            <div className="mt-5 ">
+              <h3 className="text-xl font-semibold ml-2">Preparation Time</h3>
+              <ul className="list-disc marker:text-blue-500 mt-4 ml-6 text-secondary marker:align-middle">
+                {item?.ingredients.map((ingredient, index) => (
+                  <li key={index} className="pl-4 mt-2">
+                    <span>
+                      {ingredient?.name} : <span>{ingredient?.quantity}</span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="mt-5">
+              <h3 className="font-fancy text-3xl text-nutmeg">Instructions</h3>
+              <ol className="list-decimal marker:text-nutmeg marker:font-semibold mt-4 ml-6">
+                {item?.instructions
+                  ?.match(/(?<=\d\.\s)[^.\n]+/g)
+                  ?.map((instruction, index) => (
+                    <li key={index} className="pl-4 mt-2">
+                      {instruction.trim()}
+                    </li>
+                  ))}
+              </ol>
+            </div>
           </div>
         </div>
       </article>
