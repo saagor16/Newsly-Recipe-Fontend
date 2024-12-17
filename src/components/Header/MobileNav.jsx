@@ -2,11 +2,18 @@ import React from "react";
 import { HiBars3BottomRight } from "react-icons/hi2";
 import { RiCloseCircleLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const MobileNav = ({ menuItems, Logo, hideLeft, onOpen, onClose }) => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut();
+  };
+
   return (
     <div className="h-16 flex justify-between items-center px-6 lg:px-12">
-      {" "}
       <a href="/">
         <img src={Logo} alt="logo" />
       </a>
@@ -35,21 +42,52 @@ const MobileNav = ({ menuItems, Logo, hideLeft, onOpen, onClose }) => {
             ))}
           </ul>
 
-          {/*login and signup btn*/}
-          <ul onClick={onClose} className="flex items-center gap-4 font-medium mt-10">
-            <Link to="/login">
-              <li>
-                <button className="text-secondary px-4 py-3 rounded border text-xl transition duration-300 hover:bg-btnColor hover:text-white">
-                  Log In
-                </button>
-              </li>
-            </Link>
-            <Link to='/register'>
-            <li>
-              <button className="text-white px-4 py-3 rounded border text-xl bg-btnColor transition duration-300 hover:bg-transparent hover:text-secondary hover:border-btnColor">
-                Sign Up
-              </button>
-            </li></Link>
+          {/* Login, Signup, or User Profile */}
+          <ul
+            onClick={onClose}
+            className="flex items-center gap-4 font-medium mt-10"
+          >
+            {user ? (
+              <>
+                <li>
+                  <div
+                    className="tooltip tooltip-bottom"
+                    data-tip={user.displayName}
+                  >
+                    <img
+                      alt={user.displayName}
+                      src={user.photoURL}
+                      className="w-12 h-12 rounded-full"
+                    />
+                  </div>
+                </li>
+                <li>
+                  <button
+                    onClick={handleLogOut}
+                    className="text-secondary px-4 py-3 rounded border text-xl transition duration-300 hover:bg-btnColor hover:text-white"
+                  >
+                    Logout
+                  </button>
+                </li>
+              </>
+            ) : (
+              <>
+                <Link to="/login">
+                  <li>
+                    <button className="text-secondary px-4 py-3 rounded border text-xl transition duration-300 hover:bg-btnColor hover:text-white">
+                      Log In
+                    </button>
+                  </li>
+                </Link>
+                <Link to="/register">
+                  <li>
+                    <button className="text-white px-4 py-3 rounded border text-xl bg-btnColor transition duration-300 hover:bg-transparent hover:text-secondary hover:border-btnColor">
+                      Sign Up
+                    </button>
+                  </li>
+                </Link>
+              </>
+            )}
           </ul>
         </div>
       </div>

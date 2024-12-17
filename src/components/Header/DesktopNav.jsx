@@ -1,7 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const DesktopNav = ({ menuItems, Logo }) => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut();
+  };
+
   return (
     <div className="h-16 flex justify-between items-center px-6 lg:px-12">
       <a href="/">
@@ -16,20 +24,49 @@ const DesktopNav = ({ menuItems, Logo }) => {
           </li>
         ))}
       </ul>
-      {/*login and signup btn*/}
+      {/* Login, Signup, or User Profile */}
       <ul className="flex items-center gap-4 font-medium">
-        <Link to='/login'>
-          <li>
-            <button className="text-secondary px-4 py-3 rounded">Log In</button>
-          </li>
-        </Link>
-        <Link to='/register'>
-          <li>
-            <button className="text-secondary px-4 py-3 rounded">
-              Sign Up
-            </button>
-          </li>
-        </Link>
+        {user ? (
+          <>
+            <li>
+              <div
+                className="tooltip tooltip-bottom"
+                data-tip={user.displayName}
+              >
+                <img
+                  alt={user.displayName}
+                  src={user.photoURL}
+                  className="w-12 h-12 rounded-full"
+                />
+              </div>
+            </li>
+            <li>
+              <button
+                onClick={handleLogOut}
+                className="text-secondary px-4 py-3 rounded"
+              >
+                Logout
+              </button>
+            </li>
+          </>
+        ) : (
+          <>
+            <Link to="/login">
+              <li>
+                <button className="text-secondary px-4 py-3 rounded">
+                  Log In
+                </button>
+              </li>
+            </Link>
+            <Link to="/register">
+              <li>
+                <button className="text-secondary px-4 py-3 rounded">
+                  Sign Up
+                </button>
+              </li>
+            </Link>
+          </>
+        )}
       </ul>
     </div>
   );
