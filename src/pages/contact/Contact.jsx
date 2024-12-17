@@ -56,96 +56,100 @@ const Contact = () => {
   };
 
   return (
-    <section className="bg-white text-black mt-14">
-      <div className="container px-6 py-12 mx-auto">
+    <section className="mb-10 text-black mt-14 flex items-center justify-center">
+      <div className="w-full max-w-4xl px-6 py-12 bg-gray-100 rounded-lg shadow-lg">
         <h1 className="text-3xl font-bold text-secondary sm:text-5xl text-center mb-8">
           Contact
         </h1>
-        <div className="grid gap-10 lg:grid-cols-2">
-          <div>
+        <div className="flex flex-col items-center">
+          <div className="text-center mb-8">
             <h2 className="text-2xl font-semibold text-gray-800">
               Chat with Us
             </h2>
             <p className="mt-2 text-gray-500">We’d love to hear from you.</p>
-            {/* Contact Information */}
-            <div className="mt-4 space-y-4">
+            <div className="mt-4 space-y-2">
               <p>
                 Email:{" "}
-                <a href="mailto:hello@merakiui.com" className="text-blue-500">
+                <a
+                  href="mailto:hello@merakiui.com"
+                  className="text-blue-500 hover:underline"
+                >
                   hello@merakiui.com
                 </a>
               </p>
               <p>
                 Phone:{" "}
-                <a href="tel:+15550000000" className="text-blue-500">
+                <a
+                  href="tel:+15550000000"
+                  className="text-blue-500 hover:underline"
+                >
                   +1 (555) 000-0000
                 </a>
               </p>
             </div>
           </div>
 
-          <div className="p-6 rounded-lg bg-gray-50 shadow-md">
-            <form onSubmit={handleSubmit}>
-              <div className="grid gap-4 md:grid-cols-2">
-                <div>
-                  <label className="block mb-2 text-sm">First Name</label>
-                  <input
-                    type="text"
-                    name="firstName"
-                    value={formData.firstName}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border rounded"
-                  />
-                  {errors.firstName && (
-                    <p className="text-red-500 text-sm">{errors.firstName}</p>
-                  )}
-                </div>
-                <div>
-                  <label className="block mb-2 text-sm">Last Name</label>
-                  <input
-                    type="text"
-                    name="lastName"
-                    value={formData.lastName}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border rounded"
-                  />
-                  {errors.lastName && (
-                    <p className="text-red-500 text-sm">{errors.lastName}</p>
-                  )}
-                </div>
+          <div className="w-full max-w-md">
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="flex flex-col">
+                <label className="block mb-2 text-sm">First Name</label>
+                <input
+                  type="text"
+                  name="firstName"
+                  value={formData.firstName}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-secondary"
+                />
+                {errors.firstName && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.firstName}
+                  </p>
+                )}
               </div>
-
-              <div className="mt-4">
+              <div className="flex flex-col">
+                <label className="block mb-2 text-sm">Last Name</label>
+                <input
+                  type="text"
+                  name="lastName"
+                  value={formData.lastName}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-secondary"
+                />
+                {errors.lastName && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.lastName}
+                  </p>
+                )}
+              </div>
+              <div className="flex flex-col">
                 <label className="block mb-2 text-sm">Email</label>
                 <input
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border rounded"
+                  className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-secondary"
                 />
                 {errors.email && (
-                  <p className="text-red-500 text-sm">{errors.email}</p>
+                  <p className="text-red-500 text-sm mt-1">{errors.email}</p>
                 )}
               </div>
-
-              <div className="mt-4">
+              <div className="flex flex-col">
                 <label className="block mb-2 text-sm">Message</label>
                 <textarea
                   name="message"
                   rows="4"
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border rounded"
+                  className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-secondary"
                 ></textarea>
                 {errors.message && (
-                  <p className="text-red-500 text-sm">{errors.message}</p>
+                  <p className="text-red-500 text-sm mt-1">{errors.message}</p>
                 )}
               </div>
-
               <button
                 type="submit"
-                className="w-full mt-4 px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600"
+                className="w-full mt-4 px-4 py-2 text-white bg-secondary rounded hover:bg-secondary-dark disabled:opacity-50"
                 disabled={loading}
               >
                 {loading ? "Sending..." : "Send Message"}
