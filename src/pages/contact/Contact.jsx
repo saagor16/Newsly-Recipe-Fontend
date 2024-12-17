@@ -20,10 +20,13 @@ const Contact = () => {
   // Form validation
   const validate = () => {
     const newErrors = {};
-    if (!formData.firstName.trim()) newErrors.firstName = "First name is required.";
-    if (!formData.lastName.trim()) newErrors.lastName = "Last name is required.";
+    if (!formData.firstName.trim())
+      newErrors.firstName = "First name is required.";
+    if (!formData.lastName.trim())
+      newErrors.lastName = "Last name is required.";
     if (!formData.email.trim()) newErrors.email = "Email is required.";
-    if (!formData.message.trim()) newErrors.message = "Message cannot be empty.";
+    if (!formData.message.trim())
+      newErrors.message = "Message cannot be empty.";
     return newErrors;
   };
 
@@ -60,12 +63,24 @@ const Contact = () => {
         </h1>
         <div className="grid gap-10 lg:grid-cols-2">
           <div>
-            <h2 className="text-2xl font-semibold text-gray-800">Chat with Us</h2>
+            <h2 className="text-2xl font-semibold text-gray-800">
+              Chat with Us
+            </h2>
             <p className="mt-2 text-gray-500">We’d love to hear from you.</p>
             {/* Contact Information */}
             <div className="mt-4 space-y-4">
-              <p>Email: <a href="mailto:hello@merakiui.com" className="text-blue-500">hello@merakiui.com</a></p>
-              <p>Phone: <a href="tel:+15550000000" className="text-blue-500">+1 (555) 000-0000</a></p>
+              <p>
+                Email:{" "}
+                <a href="mailto:hello@merakiui.com" className="text-blue-500">
+                  hello@merakiui.com
+                </a>
+              </p>
+              <p>
+                Phone:{" "}
+                <a href="tel:+15550000000" className="text-blue-500">
+                  +1 (555) 000-0000
+                </a>
+              </p>
             </div>
           </div>
 
@@ -81,7 +96,9 @@ const Contact = () => {
                     onChange={handleChange}
                     className="w-full px-4 py-2 border rounded"
                   />
-                  {errors.firstName && <p className="text-red-500 text-sm">{errors.firstName}</p>}
+                  {errors.firstName && (
+                    <p className="text-red-500 text-sm">{errors.firstName}</p>
+                  )}
                 </div>
                 <div>
                   <label className="block mb-2 text-sm">Last Name</label>
@@ -92,7 +109,9 @@ const Contact = () => {
                     onChange={handleChange}
                     className="w-full px-4 py-2 border rounded"
                   />
-                  {errors.lastName && <p className="text-red-500 text-sm">{errors.lastName}</p>}
+                  {errors.lastName && (
+                    <p className="text-red-500 text-sm">{errors.lastName}</p>
+                  )}
                 </div>
               </div>
 
@@ -105,7 +124,9 @@ const Contact = () => {
                   onChange={handleChange}
                   className="w-full px-4 py-2 border rounded"
                 />
-                {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
+                {errors.email && (
+                  <p className="text-red-500 text-sm">{errors.email}</p>
+                )}
               </div>
 
               <div className="mt-4">
@@ -117,7 +138,9 @@ const Contact = () => {
                   onChange={handleChange}
                   className="w-full px-4 py-2 border rounded"
                 ></textarea>
-                {errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}
+                {errors.message && (
+                  <p className="text-red-500 text-sm">{errors.message}</p>
+                )}
               </div>
 
               <button

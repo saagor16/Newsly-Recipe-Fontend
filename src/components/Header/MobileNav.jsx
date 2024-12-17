@@ -26,6 +26,7 @@ const MobileNav = ({ menuItems, Logo, hideLeft, onOpen, onClose }) => {
               <li key={index}>
                 <Link
                   to={menu}
+                  onClick={onClose}
                   className="font-medium capitalize text-secondary text-2xl"
                 >
                   {menu}
@@ -37,12 +38,12 @@ const MobileNav = ({ menuItems, Logo, hideLeft, onOpen, onClose }) => {
           {/*login and signup btn*/}
           <ul className="flex items-center gap-4 font-medium mt-10">
             <li>
-              <button className="text-secondary px-4 py-3 rounded border text-xl">
+              <button className="text-secondary px-4 py-3 rounded border text-xl transition duration-300 hover:bg-btnColor hover:text-white">
                 Log In
               </button>
             </li>
             <li>
-              <button className="text-secondary px-4 py-3 rounded border text-xl">
+              <button className="text-white px-4 py-3 rounded border text-xl bg-btnColor transition duration-300 hover:bg-transparent hover:text-secondary hover:border-btnColor">
                 Sign Up
               </button>
             </li>
