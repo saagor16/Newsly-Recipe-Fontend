@@ -23,7 +23,7 @@ const DesktopNav = ({ menuItems, Logo }) => {
             <button className="text-secondary px-4 py-3 rounded">Log In</button>
           </li>
         </Link>
-        <Link>
+        <Link to='/register'>
           <li>
             <button className="text-secondary px-4 py-3 rounded">
               Sign Up

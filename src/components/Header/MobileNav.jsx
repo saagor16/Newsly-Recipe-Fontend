@@ -44,11 +44,12 @@ const MobileNav = ({ menuItems, Logo, hideLeft, onOpen, onClose }) => {
                 </button>
               </li>
             </Link>
+            <Link to='/register'>
             <li>
               <button className="text-white px-4 py-3 rounded border text-xl bg-btnColor transition duration-300 hover:bg-transparent hover:text-secondary hover:border-btnColor">
                 Sign Up
               </button>
-            </li>
+            </li></Link>
           </ul>
         </div>
       </div>

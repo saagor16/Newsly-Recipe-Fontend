@@ -14,6 +14,7 @@ import About from "./pages/about/About.jsx";
 import Contact from "./pages/contact/Contact.jsx";
 import Login from "./pages/login/Login.jsx";
 import AuthProvider from "./providers/AuthProvider.jsx";
+import SingUp from "./pages/singup/SingUp.jsx";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
       {
         path:'/login',
         element:<Login></Login>
+      },
+      {
+        path:'/register',
+        element:<SingUp></SingUp>
       },
     ]
   },
