@@ -31,7 +31,7 @@ const Subscription = () => {
               placeholder="Enter Your Email"
             />
             <button type="submit"
-            className="flex-none rounded-md bg-btnColor px-8 py-4 text-sm font-semibold text-white shadow-sm hover:bg-white hover:text-btnColor hover:border-btnColor hover:border"
+            className="flex-none border-none rounded-md bg-btnColor px-8 py-4 text-sm font-semibold text-white shadow-sm hover:bg-white hover:text-btnColor hover:border-btnColor hover:border"
             >Subscribe</button>
           </div>
         </div>
