@@ -21,7 +21,7 @@ const MobileNav = ({ menuItems, Logo, hideLeft, onOpen, onClose }) => {
         </button>
 
         <div className="mt-44">
-          <ul className="flex flex-col gap-5">
+          <ul className="flex flex-col gap-5 items-center">
             {menuItems?.map((menu, index) => (
               <li key={index}>
                 <Link

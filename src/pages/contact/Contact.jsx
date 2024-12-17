@@ -56,7 +56,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="bg-white text-black">
+    <section className="bg-white text-black mt-14">
       <div className="container px-6 py-12 mx-auto">
         <h1 className="text-3xl font-bold text-secondary sm:text-5xl text-center mb-8">
           Contact
