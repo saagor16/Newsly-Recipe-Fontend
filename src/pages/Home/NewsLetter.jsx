@@ -11,7 +11,7 @@ const NewsLetter = () => {
                 <input className='flex flex-grow px-4 py-4 rounded text-gray-400 outline-none placeholder:text-[#1b2629]' type="text" placeholder='Name' />
                 <input className='flex flex-grow px-4 py-4 rounded text-gray-400 outline-none placeholder:text-[#1b2629]' type="email" placeholder='Email Address' />
                 <button className="mt-2 md:mt-0 md:ml-0 bg-btnColor hover:text-secondary outline-none hover:border hover:border-btnColor hover:bg-[#f9f7f3] text-white shadow-lg rounded px-8
-                py-4">
+                py-4 border-none">
               Get Started
             </button>
             </div>
