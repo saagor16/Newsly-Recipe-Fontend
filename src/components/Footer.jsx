@@ -6,6 +6,7 @@ import {
   FaGithub,
   FaLinkedin,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -13,19 +14,21 @@ const Footer = () => {
       <div className="mx-auto max-w-screen-xl space-y-8 px-4 py-12 sm:px-6 lg:space-y-16 lg:px-8">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <div>
-            <div className="text-teal-600">
-              <img src="/logo.svg" alt="" />
-            </div>
+            <Link to="/">
+              <div className="text-teal-600">
+                <img src="/logo.svg" alt="" />
+              </div>
+            </Link>
 
             <p className="mt-4 max-w-xs text-gray-500">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse non
-              cupiditate quae nam molestias.
+              Discover delicious recipes, helpful resources, and everything you
+              need to make cooking simple and enjoyable.
             </p>
 
             <ul className="mt-8 flex gap-6">
               <li>
                 <a
-                  href="#"
+                  href="/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-700 transition hover:opacity-75"
@@ -45,7 +48,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-700 transition hover:opacity-75"
@@ -139,7 +142,7 @@ const Footer = () => {
               <ul className="mt-6 space-y-4 text-sm">
                 <li>
                   <a
-                    href="#"
+                    href="/about"
                     className="text-gray-700 transition hover:opacity-75"
                   >
                     {" "}
@@ -175,7 +178,7 @@ const Footer = () => {
               <ul className="mt-6 space-y-4 text-sm">
                 <li>
                   <a
-                    href="#"
+                    href="/contact"
                     className="text-gray-700 transition hover:opacity-75"
                   >
                     {" "}
