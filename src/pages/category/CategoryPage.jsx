@@ -16,7 +16,7 @@ const CategoryPage = () => {
       setLoading(true);
 
       try {
-        const response = await axios.get(`http://localhost:5000/api/categories/${category}`);
+        const response = await axios.get(`https://veggify-recipe-backend.vercel.app/api/categories/${category}`);
         setItems(response.data)
       } catch (error) {
         setError(error.message || "Error Loading category")
